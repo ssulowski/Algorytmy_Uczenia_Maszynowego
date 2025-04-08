@@ -1,7 +1,7 @@
 # Makefile for XOR Model Project
 
 # Definicja zmiennych
-PYTHON = "C:\Users\szymi\AppData\Local\Programs\Python\Python311\python.exe"
+PYTHON = python
 GENERATE_DATASET = generate_dataset.py
 EVALUATE_MODEL = evaluate_model.py
 TEACH_MODEL = teach_model.py
