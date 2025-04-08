@@ -24,7 +24,7 @@ def save_to_file(
 
 def inner_main(
     samples_amount: int = typer.Argument(
-        None,
+        1000,
         help="Number of generated learning samples.",
     ),
     split_name: str = typer.Option(
@@ -46,9 +46,6 @@ def inner_main(
         indices = [random.randint(0, 3) for _ in range(samples_amount)]
         inputs = xor_inputs[indices]
         expected_output = xor_outputs[indices]
-    else:
-        inputs = np.array([(i, j) for i in (0, 1) for j in (0, 1)])
-        expected_output = np.array([i ^ j for i, j in inputs])
 
     positive_counter = int(np.sum(expected_output))
     negative_counter = len(expected_output) - positive_counter
