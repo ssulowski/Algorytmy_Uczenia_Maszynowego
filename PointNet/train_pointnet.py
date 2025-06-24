@@ -225,9 +225,9 @@ def train_pointnet_es(data_dir,
             torch.save(model.state_dict(), 'best_pointnet_model.pth')
         else:
             epochs_no_improve += 1
-            #if epochs_no_improve >= patience:
-            #    print(f"Early stopping at epoch {epoch}")
-            #    break
+            if epochs_no_improve >= patience:
+                print(f"Early stopping at epoch {epoch}")
+                break
 
     # load best model
     model.load_state_dict(torch.load('best_pointnet_model.pth'))
